@@ -22,8 +22,8 @@ export default class Home extends Component {
     return (
       <div>
         <PageHeading />
-          <Parallax strength={1000}>
-            <div style={{height: 600}}>
+          <Parallax strength={300}>
+            <div style={{height: 500}}>
               <Header
                 as='h1'
                 content="Meet RAISS"
