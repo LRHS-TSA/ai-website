@@ -6,9 +6,10 @@ import {
 } from 'semantic-ui-react'
 
 import { NavLink } from 'react-router-dom'
+import Scrollchor from 'react-scrollchor';
 
 export default () => (
   <Container>
-    <NavLink exact to="/" activeClassName="active" className="item">Home</NavLink>
+      <Menu.Item className="item"><Scrollchor to="#meet">Meet RAISS</Scrollchor></Menu.Item>
   </Container>
 )
