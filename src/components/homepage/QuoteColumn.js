@@ -11,6 +11,7 @@ export default class QuoteColumn extends Component {
       <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
         <Icon name={this.props.iconName} size='massive' />
         <Header as='h3' style={{ fontSize: '1.5em' }}>{this.props.text}</Header>
+        <p style={{ fontSize: '1.25em' }}>{this.props.subtext}</p>
       </Grid.Column>
     );
   }

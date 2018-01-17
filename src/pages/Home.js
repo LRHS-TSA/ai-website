@@ -14,11 +14,28 @@ import {
   Header,
   Image,
   Segment,
+  Accordion,
+  Icon,
+  Card,
+  List,
+  Label
 } from 'semantic-ui-react'
 
 
 export default class Home extends Component {
+  state = { activeIndex: -1 }
+
+  handleClick = (e, titleProps) => {
+    const { index } = titleProps
+    const { activeIndex } = this.state
+    const newIndex = activeIndex === index ? -1 : index
+
+    this.setState({ activeIndex: newIndex })
+  }
+
   render() {
+    const { activeIndex } = this.state
+
     return (
       <div>
         <PageHeading />
@@ -58,7 +75,7 @@ export default class Home extends Component {
               <Grid.Column width={8}>
                 <ClaimText
                   header="AI To Keep Us Safe."
-                  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget enim eget sapien consectetur sollicitudin. Aliquam sit amet ante ut neque facilisis convallis eget non diam. Nam erat massa, placerat ac massa non, malesuada facilisis nibh. Donec rhoncus tellus nec enim tristique, ut pharetra metus rhoncus. Mauris nec elit augue. Integer tristique neque arcu, ut condimentum nisl pellentesque eget. Ut in lorem molestie, sollicitudin risus nec, laoreet enim. Vivamus imperdiet tristique ullamcorper. Pellentesque ut molestie felis."
+                  text="The Robotic Artificial Intelligence Security System, or RAISS, is a security-based artificial intelligence system that has the potential to revolutionize modern surveillance and transform defense in the workforce. Using technologies spanning from facial recognition to the prediction of future actions, the RAISS ensures for maximum safety in any business or commercial environment. By adhering to Isaac Asimov’s Three Laws of Robots, the RAISS can be trusted with the protection of human life without the need to worry about the system going to extreme lengths to complete a fundamental action that it believes to be beneficiary."
                 />
               </Grid.Column>
               <Grid.Column floated='right' width={6}>
@@ -72,6 +89,13 @@ export default class Home extends Component {
             </Grid.Row>
           </Grid>
         </Segment>
+        <Parallax
+            bgImage={require('../images/camera.jpg')}
+            bgImageAlt="the camera"
+            strength={200}
+            style={{marginBottom: '4em'}}
+          ><div style={{height: 300}}>
+        </div></Parallax>
         <Segment style={{ padding: '0em' }} vertical>
         <Divider
           as='h4'
@@ -89,34 +113,151 @@ export default class Home extends Component {
               <FeatureColumn iconName='dashboard' text="All data is collected to then predict the likelihood of a crime being committed." />
             </Grid.Row>
           </Grid>
+          <Accordion>
+            <Accordion.Title active={activeIndex === 0} index={0} onClick={this.handleClick}>
+              <Header as='h2' textAlign='center'>
+                <Icon name='dropdown' />
+                In More Detail
+              </Header>
+            </Accordion.Title>
+            <Accordion.Content active={activeIndex === 0}>
+              <Container text>
+                <Segment padded>
+                  <p style={{ fontSize: '1.33em' }}>
+                    The RAISS, essentially, is an AI system that “sits” in the security monitor room of a business or commercial industry building, monitoring the cameras for any suspicious or endangering situations. By continuously monitoring and mapping the environment it surveys, the RAISS is constantly updating. This technology is based off of the Simultaneous Location and Mapping technique that allows for robots to constantly update a map as they learn new information over a period of time. Upon sensing any irregular actions, the system is programmed to automatically alert the necessary level of security personnel, meaning it could inform anyone from the security guards in the building, to police officers, or even the FBI. It does this by sending a message saying something along the lines of “Alert! Life endangering situation at *input location*. Need immediate response!” to the devices of all personnel. At that point, the robot has done its job and the situation is now in the hands of the necessary human responders. This AI system could potentially create more jobs than it eliminates. Even when expunging the need for human camera monitors, there will be an increased demand for more security personnel, engineers, coders, people to make routine checkups on the robot, and any other necessary employees.
+                  </p>
+                </Segment>
+              </Container>
+            </Accordion.Content>
+          </Accordion>
         </Segment>
 
         <Segment style={{ padding: '4em 0em' }} vertical>
-          <Parallax
-            bgImage={require('../images/camera.jpg')}
-            bgImageAlt="the camera"
-            strength={200}
-            style={{marginBottom: '4em'}}
-          ><div style={{height: 300}}>
-        </div></Parallax>
-          <Container text>
-            <NewsExert
-              header="More Than Just TSA"
-              exert="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget enim eget sapien consectetur sollicitudin. Aliquam sit amet ante ut neque facilisis convallis eget non diam. Nam erat massa, placerat ac massa non, malesuada facilisis nibh. Donec rhoncus tellus nec enim tristique, ut pharetra metus rhoncus. Mauris nec elit augue."
-            />
-            <Divider
-              as='h4'
-              className='header'
-              horizontal
-              style={{ margin: '3em 0em', textTransform: 'uppercase' }}
-            >
-              <a href='#'>In the News</a>
-            </Divider>
-            <NewsExert
-              header="News!"
-              exert="
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget enim eget sapien consectetur sollicitudin. Aliquam sit amet ante ut neque facilisis convallis eget non diam. Nam erat massa, placerat ac massa non, malesuada facilisis nibh. Donec rhoncus tellus nec enim tristique, ut pharetra metus rhoncus. Mauris nec elit augue."
-            />
+          <Container>
+            <Card.Group itemsPerRow={3}>
+              <Card raised>
+                <Card.Content>
+                    <Card.Header style={{ textAlign: 'center' }}>
+                      <Icon name='users' size='huge' />
+                      <Header as='h2' textAlign='center'>Community Edition</Header>
+                      <p style={{ fontSize: '0.75em', textAlign: 'center' }}>
+                        Free to setup on your own system to your liking. Set up a whole network or experiment with the AI.
+                      </p>
+                    </Card.Header>
+                </Card.Content>
+                <Card.Content>
+                  <List divided relaxed>
+                    <List.Item>
+                      <List.Content>
+                        <List.Description as='p' style={{ textAlign: 'center' }}>
+                          <Label color='blue' size='big'>Core RAISS AI System</Label>
+                        </List.Description>
+                      </List.Content>
+                    </List.Item>
+                    <List.Item>
+                      <List.Content>
+                        <List.Description as='p' style={{ textAlign: 'center' }}>
+                        <Header as='h3' textAlign='center'>Community Support</Header>
+                        </List.Description>
+                      </List.Content>
+                    </List.Item>
+                  </List>
+                </Card.Content>
+              </Card>
+              <Card raised>
+                <Card.Content>
+                    <Card.Header style={{ textAlign: 'center' }}>
+                      <Icon name='shipping' size='huge' />
+                      <Header as='h2' textAlign='center'>Business Edition</Header>
+                      <p style={{ fontSize: '0.75em', textAlign: 'center' }}>
+                        RAISS is brought to your small business or warehouse, ready to monitor with the confiedence of 24/7 support.
+                      </p>
+                    </Card.Header>
+                </Card.Content>
+                <Card.Content>
+                  <List divided relaxed>
+                    <List.Item>
+                      <List.Content>
+                        <List.Description as='p' style={{ textAlign: 'center' }}>
+                          <Label color='blue' size='big'>Core RAISS AI System</Label>
+                        </List.Description>
+                      </List.Content>
+                    </List.Item>
+                    <List.Item>
+                      <List.Content>
+                        <List.Description as='p' style={{ textAlign: 'center' }}>
+                        <Header as='h3' textAlign='center'>24/7 Support</Header>
+                        </List.Description>
+                      </List.Content>
+                    </List.Item>
+                    <List.Item>
+                      <List.Content>
+                        <List.Description as='p' style={{ textAlign: 'center' }}>
+                        <Header as='h3' textAlign='center'>Up to 20 Cameras</Header>
+                        </List.Description>
+                      </List.Content>
+                    </List.Item>
+                    <List.Item>
+                      <List.Content>
+                        <List.Description as='p' style={{ textAlign: 'center' }}>
+                        <Header as='h3' textAlign='center'>Live Feed to Web Panels</Header>
+                        </List.Description>
+                      </List.Content>
+                    </List.Item>
+                    <List.Item>
+                      <List.Content>
+                        <List.Description as='p' style={{ textAlign: 'center' }}>
+                        <Header as='h3' textAlign='center'>Free Installation On-Site</Header>
+                        </List.Description>
+                      </List.Content>
+                    </List.Item>
+                  </List>
+                </Card.Content>
+              </Card>
+              <Card raised>
+                <Card.Content>
+                    <Card.Header style={{ textAlign: 'center' }}>
+                      <Icon name='building' size='huge' />
+                      <Header as='h2' textAlign='center'>Enterprise Edition</Header>
+                      <p style={{ fontSize: '0.75em', textAlign: 'center' }}>
+                        RAISS is ready to watch your large warehouse and offices, given all the sources it needs to make sure nothing gets past without it knowing it. Still with all the 24/7 support you know and love.
+                      </p>
+                    </Card.Header>
+                </Card.Content>
+                <Card.Content>
+                  <List divided relaxed>
+                    <List.Item>
+                      <List.Content>
+                        <List.Description as='p' style={{ textAlign: 'center' }}>
+                          <Label color='blue' size='big'>Includes Business Edition Features</Label>
+                        </List.Description>
+                      </List.Content>
+                    </List.Item>
+                    <List.Item>
+                      <List.Content>
+                        <List.Description as='p' style={{ textAlign: 'center' }}>
+                        <Header as='h3' textAlign='center'>Up to 100 Cameras</Header>
+                        </List.Description>
+                      </List.Content>
+                    </List.Item>
+                    <List.Item>
+                      <List.Content>
+                        <List.Description as='p' style={{ textAlign: 'center' }}>
+                        <Header as='h3' textAlign='center'>Phone Monitoring</Header>
+                        </List.Description>
+                      </List.Content>
+                    </List.Item>
+                    <List.Item>
+                      <List.Content>
+                        <List.Description as='p' style={{ textAlign: 'center' }}>
+                        <Header as='h3' textAlign='center'>SSO for Webpanel</Header>
+                        </List.Description>
+                      </List.Content>
+                    </List.Item>
+                  </List>
+                </Card.Content>
+              </Card>
+            </Card.Group>
           </Container>
         </Segment>
       </div>
