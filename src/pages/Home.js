@@ -3,6 +3,7 @@ import ClaimText from '../components/homepage/ClaimText'
 import FeatureColumn from '../components/homepage/QuoteColumn'
 import NewsExert from '../components/homepage/NewsExert'
 import PageHeading from '../components/PageHeading'
+import PricingCard from '../components/homepage/PricingCard'
 import Particles from 'react-particles-js';
 import { Parallax, Background } from 'react-parallax';
 
@@ -135,128 +136,27 @@ export default class Home extends Component {
         <Segment style={{ padding: '4em 0em' }} vertical>
           <Container>
             <Card.Group itemsPerRow={3}>
-              <Card raised>
-                <Card.Content>
-                    <Card.Header style={{ textAlign: 'center' }}>
-                      <Icon name='users' size='huge' />
-                      <Header as='h2' textAlign='center'>Community Edition</Header>
-                      <p style={{ fontSize: '0.75em', textAlign: 'center' }}>
-                        Free to setup on your own system to your liking. Set up a whole network or experiment with the AI.
-                      </p>
-                    </Card.Header>
-                </Card.Content>
-                <Card.Content>
-                  <List divided relaxed>
-                    <List.Item>
-                      <List.Content>
-                        <List.Description as='p' style={{ textAlign: 'center' }}>
-                          <Label color='blue' size='big'>Core RAISS AI System</Label>
-                        </List.Description>
-                      </List.Content>
-                    </List.Item>
-                    <List.Item>
-                      <List.Content>
-                        <List.Description as='p' style={{ textAlign: 'center' }}>
-                        <Header as='h3' textAlign='center'>Community Support</Header>
-                        </List.Description>
-                      </List.Content>
-                    </List.Item>
-                  </List>
-                </Card.Content>
-              </Card>
-              <Card raised>
-                <Card.Content>
-                    <Card.Header style={{ textAlign: 'center' }}>
-                      <Icon name='shipping' size='huge' />
-                      <Header as='h2' textAlign='center'>Business Edition</Header>
-                      <p style={{ fontSize: '0.75em', textAlign: 'center' }}>
-                        RAISS is brought to your small business or warehouse, ready to monitor with the confiedence of 24/7 support.
-                      </p>
-                    </Card.Header>
-                </Card.Content>
-                <Card.Content>
-                  <List divided relaxed>
-                    <List.Item>
-                      <List.Content>
-                        <List.Description as='p' style={{ textAlign: 'center' }}>
-                          <Label color='blue' size='big'>Core RAISS AI System</Label>
-                        </List.Description>
-                      </List.Content>
-                    </List.Item>
-                    <List.Item>
-                      <List.Content>
-                        <List.Description as='p' style={{ textAlign: 'center' }}>
-                        <Header as='h3' textAlign='center'>24/7 Support</Header>
-                        </List.Description>
-                      </List.Content>
-                    </List.Item>
-                    <List.Item>
-                      <List.Content>
-                        <List.Description as='p' style={{ textAlign: 'center' }}>
-                        <Header as='h3' textAlign='center'>Up to 20 Cameras</Header>
-                        </List.Description>
-                      </List.Content>
-                    </List.Item>
-                    <List.Item>
-                      <List.Content>
-                        <List.Description as='p' style={{ textAlign: 'center' }}>
-                        <Header as='h3' textAlign='center'>Live Feed to Web Panels</Header>
-                        </List.Description>
-                      </List.Content>
-                    </List.Item>
-                    <List.Item>
-                      <List.Content>
-                        <List.Description as='p' style={{ textAlign: 'center' }}>
-                        <Header as='h3' textAlign='center'>Free Installation On-Site</Header>
-                        </List.Description>
-                      </List.Content>
-                    </List.Item>
-                  </List>
-                </Card.Content>
-              </Card>
-              <Card raised>
-                <Card.Content>
-                    <Card.Header style={{ textAlign: 'center' }}>
-                      <Icon name='building' size='huge' />
-                      <Header as='h2' textAlign='center'>Enterprise Edition</Header>
-                      <p style={{ fontSize: '0.75em', textAlign: 'center' }}>
-                        RAISS is ready to watch your large warehouse and offices, given all the sources it needs to make sure nothing gets past without it knowing it. Still with all the 24/7 support you know and love.
-                      </p>
-                    </Card.Header>
-                </Card.Content>
-                <Card.Content>
-                  <List divided relaxed>
-                    <List.Item>
-                      <List.Content>
-                        <List.Description as='p' style={{ textAlign: 'center' }}>
-                          <Label color='blue' size='big'>Includes Business Edition Features</Label>
-                        </List.Description>
-                      </List.Content>
-                    </List.Item>
-                    <List.Item>
-                      <List.Content>
-                        <List.Description as='p' style={{ textAlign: 'center' }}>
-                        <Header as='h3' textAlign='center'>Up to 100 Cameras</Header>
-                        </List.Description>
-                      </List.Content>
-                    </List.Item>
-                    <List.Item>
-                      <List.Content>
-                        <List.Description as='p' style={{ textAlign: 'center' }}>
-                        <Header as='h3' textAlign='center'>Phone Monitoring</Header>
-                        </List.Description>
-                      </List.Content>
-                    </List.Item>
-                    <List.Item>
-                      <List.Content>
-                        <List.Description as='p' style={{ textAlign: 'center' }}>
-                        <Header as='h3' textAlign='center'>SSO for Webpanel</Header>
-                        </List.Description>
-                      </List.Content>
-                    </List.Item>
-                  </List>
-                </Card.Content>
-              </Card>
+              <PricingCard
+                title="Community Edition"
+                icon="users"
+                description="Free to setup on your own system to your liking. Set up a whole network or experiment with the AI."
+                bigFeature="Core RAISS AI System"
+                items={["Community Support", "Up to 10 Cameras", "Access to RAISS API"]}
+              />
+              <PricingCard
+                title="Business Edition"
+                icon="truck"
+                description="RAISS is brought to your small business or warehouse, ready to monitor with the confiedence of 24/7 support."
+                bigFeature="Core RAISS AI System"
+                items={["24/7 Support", "Up to 20 Cameras", "Web Monitoring", "Free Installation On-Site", "Phone Alerts"]}
+              />   
+              <PricingCard
+                title="Enterprise Edition"
+                icon="building"
+                description="RAISS is ready to watch your large warehouse or office, given all the sources it needs to make sure nothing gets past without it knowing it."
+                bigFeature="All Business Edition Features"
+                items={["Up to 100 Cameras", "Phone Monitoring", "SSO for Webpanel"]}
+              />
             </Card.Group>
           </Container>
         </Segment>
