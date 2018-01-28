@@ -15,7 +15,7 @@ RUN npm run build --production
 RUN npm install -g serve
 
 # Set the command to start the node server.
-CMD serve -s build
+CMD serve -s build -p 80
 
 # Tell Docker about the port we'll run on.
-EXPOSE 5000
+EXPOSE 80
