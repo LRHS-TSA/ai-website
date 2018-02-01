@@ -47,6 +47,9 @@ export default class PricingCard extends Component {
                 {listItems}
                 </List>
             </Card.Content>
+            <Card.Content extra>
+             <Header as='h1' textAlign='center' disabled>{this.props.price}</Header>
+            </Card.Content>
         </Card>
     );
   }
