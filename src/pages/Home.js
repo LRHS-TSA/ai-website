@@ -57,13 +57,17 @@ export default class Home extends Component {
                   params={{
                     particles: {
                       number: {
-                        value: 100
+                        value: 80,
+                      },
+                      density: {
+                        enable: true,
+                        value_area: 800
                       },
                       line_linked: {
                         shadow: {
+                          distance: 150,
                           enable: true,
-                          color: "#3CA9D1",
-                          blur: 5
+                          color: "#3CA9D1"
                         }
                       }
                     }

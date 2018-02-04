@@ -12,7 +12,6 @@ import {
 export default class PricingCard extends Component {
   render() {
     var listItems = [];
-    console.log(this.props.items);
     for (var num in this.props.items) {
         listItems.push(
          <List.Item>
