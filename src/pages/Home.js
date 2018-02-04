@@ -1,47 +1,31 @@
 import React, { Component } from 'react'
 import ClaimText from '../components/homepage/ClaimText'
 import FeatureColumn from '../components/homepage/QuoteColumn'
-import NewsExert from '../components/homepage/NewsExert'
-import PageHeading from '../components/PageHeading'
 import PricingCard from '../components/homepage/PricingCard'
 import ParallaxDivider from '../components/ParallaxDivider'
 import Particles from 'react-particles-js';
 import { Parallax, Background } from 'react-parallax';
 
 import {
-  Button,
   Container,
   Divider,
   Grid,
   Header,
   Image,
   Segment,
-  Accordion,
   Icon,
   Card,
-  List,
-  Label,
   Table
 } from 'semantic-ui-react'
 
 
 export default class Home extends Component {
-  state = { activeIndex: -1 }
-
-  handleClick = (e, titleProps) => {
-    const { index } = titleProps
-    const { activeIndex } = this.state
-    const newIndex = activeIndex === index ? -1 : index
-
-    this.setState({ activeIndex: newIndex })
-  }
 
   render() {
-    const { activeIndex } = this.state
 
     return (
       <div>
-          <Parallax strength={700}>
+          <Parallax strength={500}>
             <div style={{height: '100vh'}}>
               <Header
                 as='h1'
@@ -117,7 +101,7 @@ export default class Home extends Component {
         <ParallaxDivider
             image={require('../images/servers.jpeg')}
             strength={200} />
-        <Segment style={{ padding: '2em 0em' }} vertical id="research" style={{ paddingBottom: '4em' }}>
+        <Segment style={{ padding: '2em 0em', paddingBottom: '4em' }} vertical id="research">
           <Grid container stackable verticalAlign='middle'>
             <Grid.Row>
               <Grid.Column>
@@ -135,13 +119,13 @@ export default class Home extends Component {
         </Segment>      
         <ParallaxDivider
             image={require('../images/chalk.jpeg')}
-            strength={300} />
-        <Segment style={{ padding: '2em 0em' }} vertical id="education" style={{ paddingBottom: '4em' }}>
+            strength={200} />
+        <Segment style={{ padding: '2em 0em', paddingBottom: '4em' }} vertical id="education">
           <Grid container stackable verticalAlign='middle'>
             <Grid.Row>
               <Grid.Column>
                 <ClaimText
-                  header="Training those in Blue"
+                  header="Training Those in Blue"
                   text="Artificial intelligence will impact education in an incredible number of ways. For example using technology such as RAISS, an AI security system, improves the quality of training for police officers or other security positions. The AI training would tremendously increase the capability of police officers as opposed to before. The novel style of training would consist of various new aspects. Using AI technology for training provides experience such as records, problems, and actions common before crime that a human would not be able to recognize instantly. The artificial intelligence could teach police officers about common situations that are frequently shown before a crime that would not generally be recognized by an individual who was not specifically trained for the situations. Aspects of such scenarios may include minute actions people make, such as signs of intimidation or nervousness. Using the robot, officers would be able to recognize these minute actions much more quickly. Another useful component  in AI officer education is being able to instantly obtain records of criminals. Having access to the criminals’ records allows for viewing patterns in criminal record, purchase history, and other records. Having access to records improves the officers’ general knowledge."
                 />
               </Grid.Column>
@@ -150,7 +134,7 @@ export default class Home extends Component {
         </Segment>   
         <ParallaxDivider
             image={require('../images/police.jpeg')}
-            strength={300} />
+            strength={200} />
         <Segment style={{ padding: '2em 0em' }} vertical id="issac">
           <Grid container stackable verticalAlign='middle'>
             <Grid.Row>
@@ -217,7 +201,7 @@ export default class Home extends Component {
 
         <ParallaxDivider
             image={require('../images/graycameras.jpeg')}
-            strength={300} />
+            strength={200} />
 
         <Segment style={{ padding: '4em 0em' }} vertical>
           <Container>
