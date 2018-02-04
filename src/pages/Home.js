@@ -4,6 +4,7 @@ import FeatureColumn from '../components/homepage/QuoteColumn'
 import NewsExert from '../components/homepage/NewsExert'
 import PageHeading from '../components/PageHeading'
 import PricingCard from '../components/homepage/PricingCard'
+import ParallaxDivider from '../components/ParallaxDivider'
 import Particles from 'react-particles-js';
 import { Parallax, Background } from 'react-parallax';
 
@@ -77,7 +78,7 @@ export default class Home extends Component {
               <Grid.Column width={8}>
                 <ClaimText
                   header="AI To Keep Us Safe."
-                  text="The Robotic Artificial Intelligence Security System, or RAISS, is a security-based artificial intelligence system that has the potential to revolutionize modern surveillance and transform defense in the workforce. Using technologies spanning from facial recognition to the prediction of future actions, the RAISS ensures for maximum safety in any business or commercial environment. By adhering to Isaac Asimov’s Three Laws of Robots, the RAISS can be trusted with the protection of human life without the need to worry about the system going to extreme lengths to complete a fundamental action that it believes to be beneficiary."
+                  text="The Robotic Artificial Intelligence Security System, or RAISS, is a security-based artificial intelligence system that has the potential to revolutionize modern surveillance and transform defense in the workforce.  By adhering to Isaac Asimov’s Three Laws of Robots, the RAISS can be trusted with the protection of human life without the need to worry about the system going to extreme lengths to complete a fundamental action that it believes to be beneficiary."
                 />
               </Grid.Column>
               <Grid.Column floated='right' width={6}>
@@ -91,13 +92,9 @@ export default class Home extends Component {
             </Grid.Row>
           </Grid>
         </Segment>
-        <Parallax
-            bgImage={require('../images/camera.jpg')}
-            bgImageAlt="the camera"
-            strength={200}
-            style={{marginBottom: '4em'}}
-          ><div style={{height: 300}}>
-        </div></Parallax>
+        <ParallaxDivider
+            image={require('../images/camera.jpg')}
+            strength={200} />
         <Segment style={{ padding: '0em' }} vertical>
         <ClaimText
           header="Eyes for Your Business"
@@ -114,33 +111,68 @@ export default class Home extends Component {
           <Grid columns='equal' stackable>
             <Grid.Row textAlign='center'>
               <FeatureColumn iconName='video camera' text="You give RAISS eyes." subtext="RAISS monitors the cameras that are placed all over the facility to look for suspicious activities through facial recognition." />
-              <FeatureColumn iconName='user circle outline' text="Facial recognition to identify trespassers." subtext="Using technologies spanning from facial recognition to the prediction of future actions, the RAISS ensures for maximum safety in any business or commercial environment." />
-              <FeatureColumn iconName='spy' text="Body language monitoring to spot nervous behaviours." subtext="Using technologies to identify expressions and potential future actions, RAISS can notify the security personnel to stop a crime before it is committed." />
-              <FeatureColumn iconName='dashboard' text="All data is collected to then predict the likelihood of a crime being committed." subtext="Data from prior activities and crimes is stored to increase reliability when finding the next suspect." />
+              <FeatureColumn iconName='user circle outline' text="Using technologies spanning from facial recognition to the prediction of future actions, the RAISS ensures for maximum safety in any business or commercial environment." />
+              <FeatureColumn iconName='spy' text="Using technologies to identify expressions and potential future actions, RAISS can notify the security personnel to stop a crime before it is committed." />
+              <FeatureColumn iconName='dashboard' text="Data from prior activities and crimes is stored to increase reliability when finding the next suspect." />
             </Grid.Row>
           </Grid>
         </Segment>
-
-        <Segment style={{ padding: '2em 0em' }} vertical id="meet">
+        <ParallaxDivider
+            image={require('../images/servers.jpeg')}
+            strength={200} />
+        <Segment style={{ padding: '2em 0em' }} vertical id="research">
           <Grid container stackable verticalAlign='middle'>
             <Grid.Row>
-              <Grid.Column width={8}>
+              <Grid.Column>
+                <ClaimText
+                  header="RAISS For Research"
+                  text="Using the technology of RAISS, new information can be obtained. This new information is further refined to find statistics along with common patterns that allow police, firefighters, paramedics, and other response units to catch problems before they occur. The information also allows proper pre planning to ensure the best course of action is taken when a situation is taking place. Found statistics provide common patterns such as where a crime is likely to occur, human behavior, repeating purchase history, and general similarities between suspects. Along with this, the system has the capability to calculate how many people are and which individual is entering, leaving, or around a specific area. By receiving this information it is possible to find a percentage of  how many crimes occur based off of the amount of people that pass a certain location. This saves time and constantly updates crime rates of cities as well as compile the data over time without having any missing or corrupted information."
+                />
+                <br />
+                <p style={{ fontSize: '1.33em' }}>
+                Businesses are also able to obtain useful information to  improve the location and advertisement of their business. Facial recognition means a store can track how often a specific individual enters and exits their store. The store owner could also tell what the foot traffic is and the percentage of people entering the store in relation to the foot traffic. A shop that has advertisements are able to test different advertising strategies and instantly tell which advertisement drew the most attention and what created the greatest profit. Information can be instantly compiled to research what strategies generate the best business and the strength of the location. Overtime the Artificial Intelligence and calculate the growth of the companies before it was installed, and how much the company grew each year having it.
+                </p>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Segment>      
+        <ParallaxDivider
+            image={require('../images/chalk.jpeg')}
+            strength={300} />
+        <Segment style={{ padding: '2em 0em' }} vertical id="education">
+          <Grid container stackable verticalAlign='middle'>
+            <Grid.Row>
+              <Grid.Column>
+                <ClaimText
+                  header="Training those in Blue"
+                  text="Artificial intelligence will impact education in an incredible number of ways. For example using technology such as RAISS, an AI security system, improves the quality of training for police officers or other security positions. The AI training would tremendously increase the capability of police officers as opposed to before. The novel style of training would consist of various new aspects. Using AI technology for training provides experience such as records, problems, and actions common before crime that a human would not be able to recognize instantly. The artificial intelligence could teach police officers about common situations that are frequently shown before a crime that would not generally be recognized by an individual who was not specifically trained for the situations. Aspects of such scenarios may include minute actions people make, such as signs of intimidation or nervousness. Using the robot, officers would be able to recognize these minute actions much more quickly. Another useful component  in AI officer education is being able to instantly obtain records of criminals. Having access to the criminals’ records allows for viewing patterns in criminal record, purchase history, and other records. Having access to records improves the officers’ general knowledge."
+                />
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Segment>   
+        <ParallaxDivider
+            image={require('../images/police.jpeg')}
+            strength={300} />
+        <Segment style={{ padding: '2em 0em' }} vertical id="issac">
+          <Grid container stackable verticalAlign='middle'>
+            <Grid.Row>
+              <Grid.Column width={12}>
                 <ClaimText
                   header="We Follow the Rules so You Don't have to Worry"
                   text="Isaac Asimov believed that at some point in time, robots would advance mentally and physically to the point where they are superior to humans. To address his negative concerns, Asimov created three laws for robotics since humans would not be able to stand up to the capabilities of robots. However, his rules revolved around the fact that, unlike humans, robots cannot think for themselves. Asimov’s plan was to embed the rules so deeply into their brains that if a robot were to break even one rule, the circuitry would be damaged beyond repair. RAISS follows all the rollowing robotics rules in order to allow the AI to be a friend, not foe."
                 />
               </Grid.Column>
-              <Grid.Column floated='right' width={6}>
+              <Grid.Column floated='right' width={4}>
                 <Image
-                  bordered
-                  rounded
+                  circular
                   size='large'
-                  src='/assets/images/wireframe/white-image.png'
+                  src={require('../images/certified.svg')}
                 />
               </Grid.Column>
             </Grid.Row>
           </Grid>
-          <Container>
+          <Container style={{ marginTop: '1em' }}>
             <Table celled structured>
               <Table.Header>
                 <Table.Row>
@@ -172,6 +204,23 @@ export default class Home extends Component {
             </Table>
           </Container>
         </Segment>
+
+        <Segment style={{ padding: '2em 0em' }} vertical id="safety">
+          <Grid container stackable verticalAlign='middle'>
+            <Grid.Row>
+              <Grid.Column>
+                <ClaimText
+                  header="The Caveats to AI Monitoring"
+                  text="Through the use of facial recognition and reading body language, the privacy of people is potentially violated. These features are necessary to create a safe environment, commercially or for a business. Potentially there can be system failures and hacking that may lead to leaked private information gained from monitoring security cameras. However, RAISS’ reputation as a security system that keeps valuable information to maintain safety and security in a business or commercial setting is preserved."
+                />
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Segment>
+
+        <ParallaxDivider
+            image={require('../images/graycameras.jpeg')}
+            strength={300} />
 
         <Segment style={{ padding: '4em 0em' }} vertical>
           <Container>
