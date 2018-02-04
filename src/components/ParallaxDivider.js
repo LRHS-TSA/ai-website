@@ -14,7 +14,7 @@ export default class ParallaxDivider extends Component {
             bgImageAlt="parallax"
             strength={this.props.strength}
             style={{marginBottom: '2em'}}
-          ><div style={{height: 300}}>
+          ><div style={{height: this.props.height == null ? 300 : this.props.height }}>
         </div></Parallax>
     );
   }

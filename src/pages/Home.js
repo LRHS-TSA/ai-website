@@ -41,12 +41,12 @@ export default class Home extends Component {
 
     return (
       <div>
-        <PageHeading />
-          <Parallax>
-            <div style={{height: '70vh'}}>
+          <Parallax strength={700}>
+            <div style={{height: '100vh'}}>
               <Header
                 as='h1'
                 content="Meet RAISS"
+                subheader="The Future of Security"
                 textAlign='center'
                 inverted
                 style={{ fontSize: '5em', fontWeight: 'normal', marginBottom: 0, marginTop: '40vh' }}
@@ -68,25 +68,17 @@ export default class Home extends Component {
                       }
                     }
                   }}
-                  style={{backgroundColor: '#1b1c1d'}}
+                  style={{backgroundColor: '#1b1c1d', minHeight: '100vh'}}
                 />
             </Background>
           </Parallax>
         <Segment style={{ padding: '2em 0em' }} vertical id="meet">
           <Grid container stackable verticalAlign='middle'>
             <Grid.Row>
-              <Grid.Column width={8}>
+              <Grid.Column width={16}>
                 <ClaimText
-                  header="AI To Keep Us Safe."
+                  header="AI to Keep Us Safe."
                   text="The Robotic Artificial Intelligence Security System, or RAISS, is a security-based artificial intelligence system that has the potential to revolutionize modern surveillance and transform defense in the workforce.  By adhering to Isaac Asimov’s Three Laws of Robots, the RAISS can be trusted with the protection of human life without the need to worry about the system going to extreme lengths to complete a fundamental action that it believes to be beneficiary."
-                />
-              </Grid.Column>
-              <Grid.Column floated='right' width={6}>
-                <Image
-                  bordered
-                  rounded
-                  size='large'
-                  src='/assets/images/wireframe/white-image.png'
                 />
               </Grid.Column>
             </Grid.Row>
@@ -94,8 +86,9 @@ export default class Home extends Component {
         </Segment>
         <ParallaxDivider
             image={require('../images/camera.jpg')}
-            strength={200} />
-        <Segment style={{ padding: '0em' }} vertical>
+            strength={200}
+            height={'60vh'} />
+        <Segment style={{ padding: '0em' }} vertical id="works">
         <ClaimText
           header="Eyes for Your Business"
           text="The RAISS, essentially, is an AI system that “sits” in the security monitor room of a business or commercial industry building, monitoring the cameras for any suspicious or endangering situations. By continuously monitoring and mapping the environment it surveys, the RAISS is constantly updating. This technology is based off of the Simultaneous Location and Mapping technique that allows for robots to constantly update a map as they learn new information over a period of time. Upon sensing any irregular actions, the system is programmed to automatically alert the necessary level of security personnel, meaning it could inform anyone from the security guards in the building, to police officers, or even the FBI. It does this by sending a message saying something along the lines of “Alert! Life endangering situation at *input location*. Need immediate response!” to the devices of all personnel. At that point, the robot has done its job and the situation is now in the hands of the necessary human responders. This AI system could potentially create more jobs than it eliminates. Even when expunging the need for human camera monitors, there will be an increased demand for more security personnel, engineers, coders, people to make routine checkups on the robot, and any other necessary employees."
@@ -106,7 +99,7 @@ export default class Home extends Component {
           horizontal
           style={{ margin: '3em 0em', textTransform: 'uppercase' }}
         >
-          <a href='#'>How it Works</a>
+          How it Works
         </Divider>
           <Grid columns='equal' stackable>
             <Grid.Row textAlign='center'>
@@ -120,7 +113,7 @@ export default class Home extends Component {
         <ParallaxDivider
             image={require('../images/servers.jpeg')}
             strength={200} />
-        <Segment style={{ padding: '2em 0em' }} vertical id="research">
+        <Segment style={{ padding: '2em 0em' }} vertical id="research" style={{ paddingBottom: '4em' }}>
           <Grid container stackable verticalAlign='middle'>
             <Grid.Row>
               <Grid.Column>
@@ -139,7 +132,7 @@ export default class Home extends Component {
         <ParallaxDivider
             image={require('../images/chalk.jpeg')}
             strength={300} />
-        <Segment style={{ padding: '2em 0em' }} vertical id="education">
+        <Segment style={{ padding: '2em 0em' }} vertical id="education" style={{ paddingBottom: '4em' }}>
           <Grid container stackable verticalAlign='middle'>
             <Grid.Row>
               <Grid.Column>
@@ -159,8 +152,8 @@ export default class Home extends Component {
             <Grid.Row>
               <Grid.Column width={12}>
                 <ClaimText
-                  header="We Follow the Rules so You Don't have to Worry"
-                  text="Isaac Asimov believed that at some point in time, robots would advance mentally and physically to the point where they are superior to humans. To address his negative concerns, Asimov created three laws for robotics since humans would not be able to stand up to the capabilities of robots. However, his rules revolved around the fact that, unlike humans, robots cannot think for themselves. Asimov’s plan was to embed the rules so deeply into their brains that if a robot were to break even one rule, the circuitry would be damaged beyond repair. RAISS follows all the rollowing robotics rules in order to allow the AI to be a friend, not foe."
+                  header="We Follow the Rules so You Don't Have to Worry"
+                  text="Isaac Asimov believed that at some point in time, robots would advance mentally and physically to the point where they are superior to humans. To address his negative concerns, Asimov created three laws for robotics since humans would not be able to stand up to the capabilities of robots. However, his rules revolved around the fact that, unlike humans, robots cannot think for themselves. Asimov’s plan was to embed the rules so deeply into their brains that if a robot were to break even one rule, the circuitry would be damaged beyond repair. RAISS adheres to all the following robotics rules in order to allow the AI to be a friend, not foe."
                 />
               </Grid.Column>
               <Grid.Column floated='right' width={4}>
