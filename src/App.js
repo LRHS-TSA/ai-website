@@ -34,11 +34,12 @@ export default class App extends Component {
                   <Header inverted as='h4' content='TSA Pages' />
                   <List link inverted>
                     <List.Item as='a' href={require('./references.pdf')}>Bibliography</List.Item>
+                    <List.Item as='a' href={'https://lrhstsa.com'}>LRHS Chapter Website</List.Item>
                   </List>
                 </Grid.Column>
                 <Grid.Column width={12}>
                   <Header as='h4' inverted>Security Inc.</Header>
-                  <p>Security Inc. is a top of the line security company that has the primary goal of ensuring that your business or company is properly protected from any security related issues that may arise. Through the use of our artificial intelligence system RAISS, businesses are able to monitor all activity in their area simultaneously. This results in superior safety compared to other surveillance companies. Nothing is more important to Security Inc. than our customers well being.</p>
+                  <p>Security Inc. is a top of the line security company that has the primary goal of ensuring that your business or company is properly protected from any security related issues that may arise. Through the use of our artificial intelligence system RAISS, businesses are able to monitor all activity in their area simultaneously. This results in superior safety compared to other surveillance companies. Nothing is more important to Security Inc. than our customer's well being.</p>
                 </Grid.Column>
                 <Grid.Column width={2}>
                   <Header inverted as='h4' content='Contact' />
