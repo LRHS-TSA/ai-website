@@ -14,7 +14,7 @@ export default class PricingCard extends Component {
         listItems.push(
          <List.Item>
             <List.Content>
-              <List.Description as='p' style={{ textAlign: 'center' }}>
+              <List.Description style={{ textAlign: 'center' }}>
               <Header as='h3' textAlign='center'>{this.props.items[num]}</Header>
               </List.Description>
             </List.Content>
@@ -36,7 +36,7 @@ export default class PricingCard extends Component {
                 <List divided relaxed>
                 <List.Item>
                     <List.Content>
-                    <List.Description as='p' style={{ textAlign: 'center' }}>
+                    <List.Description style={{ textAlign: 'center' }}>
                         <Label color='blue' size='big'>{this.props.bigFeature}</Label>
                     </List.Description>
                     </List.Content>

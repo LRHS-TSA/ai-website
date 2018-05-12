@@ -5,6 +5,9 @@ import PricingCard from '../components/homepage/PricingCard'
 import ParallaxDivider from '../components/ParallaxDivider'
 import Particles from 'react-particles-js';
 import { Parallax, Background } from 'react-parallax';
+import Typed from 'react-typed';
+import Waypoint from 'react-waypoint';
+
 
 import {
   Container,
@@ -15,14 +18,25 @@ import {
   Segment,
   Icon,
   Card,
-  Table
+  Table,
+  List
 } from 'semantic-ui-react'
 
 
 export default class Home extends Component {
 
-  render() {
+  constructor(props) {
+    super(props)
+    this.typistStarted = false
+    this._handleEnter = () => {
+      if (!this.typistStarted) {
+        this.typed.start()
+        this.typistStarted = true
+      }
+    }
+  }
 
+  render() {
     return (
       <div>
           <Parallax strength={500}>
@@ -41,11 +55,11 @@ export default class Home extends Component {
                   params={{
                     particles: {
                       number: {
-                        value: 80,
-                      },
-                      density: {
-                        enable: true,
-                        value_area: 800
+                        value: 40,
+                        density: {
+                          enable: false,
+                          value_area: 800
+                        }
                       },
                       line_linked: {
                         shadow: {
@@ -57,6 +71,7 @@ export default class Home extends Component {
                     }
                   }}
                   style={{backgroundColor: '#1b1c1d', minHeight: '100vh'}}
+                  className='hide-mobile'
                 />
             </Background>
           </Parallax>
@@ -66,7 +81,7 @@ export default class Home extends Component {
               <Grid.Column width={16}>
                 <ClaimText
                   header="AI to Keep Us Safe."
-                  text="The Robotic Artificial Intelligence Security System, or RAISS, is a security-based artificial intelligence system that has the potential to revolutionize modern surveillance and transform defense in the workforce.  By adhering to Isaac Asimov’s Three Laws of Robots, the RAISS can be trusted with the protection of human life without the need to worry about the system going to extreme lengths to complete a fundamental action that it believes to be beneficiary."
+                  text="AI, or Artificial Intelligence, is the science and engineering of making intelligent machines. A machine is considered intelligent if it can carry out tasks that would require the general, human definition of “intelligence” to complete. AI systems will typically demonstrate characteristics such as planning, learning, reasoning, problem-solving, perception, and even creativity. The Robotic Artificial Intelligence Security System, or RAISS, is a security-based artificial intelligence system that has the potential to revolutionize modern surveillance and transform defense in the workforce.  By adhering to Isaac Asimov’s Three Laws of Robots, the RAISS can be trusted with the protection of human life without the need to worry about the system going to extreme lengths to complete a fundamental action that it believes to be beneficiary."
                 />
               </Grid.Column>
             </Grid.Row>
@@ -79,7 +94,7 @@ export default class Home extends Component {
         <Segment style={{ padding: '0em' }} vertical id="works">
         <ClaimText
           header="Eyes for Your Business"
-          text="The RAISS, essentially, is an AI system that “sits” in the security monitor room of a business or commercial industry building, monitoring the cameras for any suspicious or endangering situations. By continuously monitoring and mapping the environment it surveys, the RAISS is constantly updating. This technology is based off of the Simultaneous Location and Mapping technique that allows for robots to constantly update a map as they learn new information over a period of time. Upon sensing any irregular actions, the system is programmed to automatically alert the necessary level of security personnel, meaning it could inform anyone from the security guards in the building, to police officers, or even the FBI. It does this by sending a message saying something along the lines of “Alert! Life endangering situation at *input location*. Need immediate response!” to the devices of all personnel. At that point, the robot has done its job and the situation is now in the hands of the necessary human responders. This AI system could potentially create more jobs than it eliminates. Even when expunging the need for human camera monitors, there will be an increased demand for more security personnel, engineers, coders, people to make routine checkups on the robot, and any other necessary employees."
+          text="The RAISS, essentially, is an AI system that “sits” in the security monitor room of a business or commercial industry building, monitoring the cameras for any suspicious or endangering situations. By continuously monitoring and mapping the environment it surveys, the RAISS is able to constantly update. This technology is based off of the Simultaneous Location and Mapping technique that allows for robots to continuously provide up-to-date details about a map as they learn new information over a period of time. Upon sensing any irregular actions, the system is programmed to automatically alert the necessary level of security personnel, meaning it could inform anyone from the security guards in the building, to police officers, or even the FBI. It does this by sending a message to the devices of all personnel. At that point, the robot has done its job and the situation is now in the hands of the necessary human responders. This AI system could potentially create more jobs than it eliminates. Even when expunging the need for human camera monitors, there will be an increased demand for more security personnel, engineers, coders, people to make routine checkups on the robot, and any other necessary employees."
         />
         <Divider
           as='h4'
@@ -107,11 +122,11 @@ export default class Home extends Component {
               <Grid.Column>
                 <ClaimText
                   header="RAISS For Research"
-                  text="Using the technology of RAISS, new information can be obtained. This new information is further refined to find statistics along with common patterns that allow police, firefighters, paramedics, and other response units to catch problems before they occur. The information also allows proper pre planning to ensure the best course of action is taken when a situation is taking place. Existing statistics provide common patterns such as where a crime is likely to occur, human behavior, repeated purchase history, and general similarities between suspects. Along with this, the system has the capability to calculate how many people are in an area, and if individuals are entering, leaving, or around a specific area. By receiving this information it is possible to find a percentage of how many crimes occur based off of the amount of people that pass a certain location. This saves time and constantly updates crime rates of cities as well as compiles the data over time without having any missing or corrupted information."
+                  text="Using the technology of RAISS, new information can be obtained. This data can be further refined to find statistics along with common patterns that allow police, firefighters, paramedics, and other response units to catch problems before they occur. It also allows proper pre-planning to ensure the best course of action is taken when a potentially dangerous situation is occurring. Existing statistics provide common patterns, including where a crime is likely to occur, human behavior, repeated purchase history, and general similarities between suspects. Along with this, the system has the capability to calculate how many people are in an area, and if individuals are entering, leaving, or are around a specific area. By receiving this information, it is possible to calculate a percentage of the general frequency of crime occurrence based off of the amount of people that pass a certain location. This saves time and keeps crime rates of cities updated; Additionally, the system compiles the data over time without the risk of missing or corrupted information."
                 />
                 <br />
                 <p style={{ fontSize: '1.33em' }}>
-                Businesses are also able to obtain useful information to improve the location and advertisement of their business. Facial recognition means a store can track how often a specific individual enters and exits their store. The store owner could also tell what the foot traffic is and the percentage of people entering the store in relation to the foot traffic. A shop that has advertisements is able to test different advertising strategies and instantly tell which advertisement drew the most attention and which created the greatest profit. Information can be instantly compiled to research which strategies generate the best business and the strength of the location. Over time the Artificial Intelligence could calculate the growth of the companies by comparing profits before the AI was installed related to the company’s growth in the years following the installation.
+                Businesses are also able to obtain useful information to improve the location and advertisement of their business. Facial recognition means a store can track how often a specific individual enters and exits their store. The store owner could also determine the density of the foot traffic and the percentage of people entering the store in relation to the foot traffic. A shop that has advertisements is able to test different advertising strategies and instantly tell which advertisement drew the most attention and which created the greatest profit. Information can be compiled to research which strategies generate the best business and the strength of the location. Over time, the Artificial Intelligence could calculate the growth of the companies by comparing profits before the AI was installed related to the company’s growth in the years following the installation.
                 </p>
               </Grid.Column>
             </Grid.Row>
@@ -135,6 +150,39 @@ export default class Home extends Component {
         <ParallaxDivider
             image={require('../images/police.jpeg')}
             strength={200} />
+
+          <Segment style={{ padding: '2em 0em' }} vertical id="api">
+            <Grid container stackable verticalAlign='middle'>
+              <Grid.Row>
+                <Grid.Column>
+                  <ClaimText
+                    header="Developer Friendly"
+                    text="RAISS has a built in API to support the development community that wishes to use the AI for their own projects. RAISS AI offers the same trained machine learning system used for security that can be then used for everything from a custom web panel, to automating respones as seen fit."
+                  />
+                  <br />
+                  <Waypoint onEnter={this._handleEnter}>
+                   <div>
+                      <Segment inverted style={{fontFamily: 'Source Sans Pro', fontSize: '1.5em'}}>
+                        $ <Typed
+                          typedRef={(typed) => { this.typed = typed; }}
+                          stopped
+                          strings={['raiss cameras list', 'raiss cameras log store', 'raiss objects log "Weapon"']} 
+                          typeSpeed={50}
+                          backSpeed={50}
+                          backDelay={3000}
+                          shuffle
+                          loop
+                          smartBackspace
+                          startDelay={2000}
+                        />
+                      </Segment>
+                    </div>
+                  </Waypoint>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+          </Segment>
+
         <Segment style={{ padding: '2em 0em' }} vertical id="issac">
           <Grid container stackable verticalAlign='middle'>
             <Grid.Row>
@@ -194,6 +242,10 @@ export default class Home extends Component {
                   header="The Caveats to AI Monitoring"
                   text="Through the use of facial recognition and detection of body language, the privacy of individuals is potentially violated. These features are necessary to create a safe environment in public spaces. There could possibly be system failures and hacking that may lead to leaked private information gained from monitoring security cameras. However, RAISS’ reputation as a security system that keeps valuable information to maintain safety and security in a business or commercial setting has been preserved."
                 />
+                <br />
+                <p style={{ fontSize: '1.33em' }}>
+                RAISS could potentially be an incredible security tool. However, to provide for the most successful outcome, some private information must be given up to ensure that public spaces stay as safe as possible. Though breaches are possible, RAISS has measures that prevent any leaks of data. RAISS has a reputation of maintaining safety and security in business and commercial settings, so buyers should not be wary.
+                </p>
               </Grid.Column>
             </Grid.Row>
           </Grid>
@@ -231,6 +283,32 @@ export default class Home extends Component {
                 price="$4500"
               />
             </Card.Group>
+          </Container>
+        </Segment>
+        <Segment inverted vertical style={{ padding: '5em 0em' }}>
+          <Container>
+            <Grid divided inverted stackable>
+              <Grid.Row>
+                <Grid.Column width={2}>
+                  <Header inverted as='h4' content='TSA Pages' />
+                  <List link inverted>
+                    <List.Item as='a' href={require('../references.pdf')}>Bibliography</List.Item>
+                    <List.Item as='a' href={'https://lrhstsa.com'}>LRHS Chapter Website</List.Item>
+                  </List>
+                </Grid.Column>
+                <Grid.Column width={12}>
+                  <Header as='h4' inverted>Security Inc.</Header>
+                  <p>Security Inc. is a top of the line security company that has the primary goal of ensuring that your business or company is properly protected from any security related issues that may arise. Through the use of our artificial intelligence system RAISS, businesses are able to monitor all activity in their area simultaneously. This results in superior safety compared to other surveillance companies. Nothing is more important to Security Inc. than our customer's well being.</p>
+                </Grid.Column>
+                <Grid.Column width={2}>
+                  <Header inverted as='h4' content='Contact' />
+                  <List link inverted>
+                    <List.Item as='a'>1-800-SECURES</List.Item>
+                    <List.Item as='a'>securityinc@securityinc.com</List.Item>
+                  </List>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
           </Container>
         </Segment>
       </div>

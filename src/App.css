@@ -26,3 +26,8 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.code {
+  font-family: 'Source Sans Pro', sans-serif !important;
+  font-size: 1.5em;
+}
