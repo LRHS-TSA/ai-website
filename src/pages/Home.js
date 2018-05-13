@@ -55,9 +55,9 @@ export default class Home extends Component {
                   params={{
                     particles: {
                       number: {
-                        value: 40,
+                        value: 20,
                         density: {
-                          enable: false,
+                          enable: true,
                           value_area: 800
                         }
                       },
@@ -66,6 +66,12 @@ export default class Home extends Component {
                           distance: 150,
                           enable: true,
                           color: "#3CA9D1"
+                        }
+                      },
+                      interactivity: {
+                        onresize: {
+                          density_auto: true,
+                          density_area: 800
                         }
                       }
                     }
