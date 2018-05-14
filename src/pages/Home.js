@@ -34,6 +34,19 @@ export default class Home extends Component {
         this.typistStarted = true
       }
     }
+    this.state = {
+      desktop: true
+    }
+    this.resize();
+  }
+
+  resize() {
+    this.setState({desktop: window.innerWidth > 480});
+  }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.resize.bind(this));
+    this.resize();
   }
 
   render() {
@@ -92,10 +105,13 @@ export default class Home extends Component {
             </Grid.Row>
           </Grid>
         </Segment>
-        <ParallaxDivider
-            image={require('../images/camera.jpg')}
-            strength={200}
-            height={'60vh'} />
+        <div className='hide-mobile'>
+          <ParallaxDivider
+              image={require('../images/camera.jpg')}
+              strength={200}
+              height={'60vh'}
+          />
+        </div>
         <Segment style={{ padding: '0em' }} vertical id="works">
         <ClaimText
           header="Eyes for Your Business"
@@ -171,14 +187,12 @@ export default class Home extends Component {
                         $ <Typed
                           typedRef={(typed) => { this.typed = typed; }}
                           stopped
-                          strings={['raiss cameras list', 'raiss cameras log store', 'raiss objects log "Weapon"']} 
+                          strings={['raiss cameras list', 'raiss cameras log store', 'raiss logs filter type "Weapon"', 'raiss logs filter object "Mask"']} 
                           typeSpeed={50}
                           backSpeed={50}
                           backDelay={3000}
-                          shuffle
                           loop
                           smartBackspace
-                          startDelay={2000}
                         />
                       </Segment>
                     </div>
@@ -198,11 +212,13 @@ export default class Home extends Component {
                 />
               </Grid.Column>
               <Grid.Column floated='right' width={4}>
-                <Image
-                  circular
-                  size='large'
-                  src={require('../images/certified.svg')}
-                />
+                <div className='hide-mobile'>
+                  <Image
+                    circular
+                    size='large'
+                    src={require('../images/certified.svg')}
+                  />
+                </div>
               </Grid.Column>
             </Grid.Row>
           </Grid>
@@ -262,7 +278,7 @@ export default class Home extends Component {
 
         <Segment style={{ padding: '4em 0em' }} vertical>
           <Container>
-            <Card.Group itemsPerRow={3}>
+            <Card.Group itemsPerRow={this.state.desktop ? 3 : 1}>
               <PricingCard
                 title="Community Edition"
                 icon="users"
