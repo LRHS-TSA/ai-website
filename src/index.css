@@ -7,3 +7,10 @@ body {
 .react-parallax-background-children {
   width: 100% !important;
 }
+
+
+@media (max-width: 480px) {
+  .hide-mobile {
+      display: none;
+  }
+}

@@ -55,7 +55,7 @@ export default class Home extends Component {
                   params={{
                     particles: {
                       number: {
-                        value: 20,
+                        value: window.innerWidth > 480 ? 20 : 0,
                         density: {
                           enable: true,
                           value_area: 800
@@ -77,7 +77,6 @@ export default class Home extends Component {
                     }
                   }}
                   style={{backgroundColor: '#1b1c1d', minHeight: '100vh'}}
-                  className='hide-mobile'
                 />
             </Background>
           </Parallax>
