@@ -261,12 +261,8 @@ export default class Home extends Component {
               <Grid.Column>
                 <ClaimText
                   header="The Caveats to AI Monitoring"
-                  text="Through the use of facial recognition and detection of body language, the privacy of individuals is potentially violated. These features are necessary to create a safe environment in public spaces. There could possibly be system failures and hacking that may lead to leaked private information gained from monitoring security cameras. However, RAISS’ reputation as a security system that keeps valuable information to maintain safety and security in a business or commercial setting has been preserved."
+                  text="RAISS could potentially be an incredible security tool. However, to provide for the most successful outcome, some private information must be given up to ensure that public spaces stay as safe as possible. Though breaches are possible, RAISS has measures that prevent any leaks of data. RAISS has a reputation of maintaining safety and security in business and commercial settings, so buyers should not be wary."
                 />
-                <br />
-                <p style={{ fontSize: '1.33em' }}>
-                RAISS could potentially be an incredible security tool. However, to provide for the most successful outcome, some private information must be given up to ensure that public spaces stay as safe as possible. Though breaches are possible, RAISS has measures that prevent any leaks of data. RAISS has a reputation of maintaining safety and security in business and commercial settings, so buyers should not be wary.
-                </p>
               </Grid.Column>
             </Grid.Row>
           </Grid>
